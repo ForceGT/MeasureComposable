@@ -9,7 +9,8 @@ Simple utilities to measure the content of a particular composable!
 ### Use Case
 
 Often, you come across a use case, where you need to measure the size of a particular composable,
-to position or measure another composable, in the same screen
+to position or measure another composable, in the same screen, you might need to use a lot of hacks and modifiers. This library will give you a readable
+workaround over the same
 
 ### Potential Solutions and their Problems
 
