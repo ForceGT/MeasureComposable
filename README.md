@@ -10,7 +10,7 @@ to position or measure another composable, in the same screen
 
 ### Potential Solutions and their Problems
 
-If you go to the developer docs, it will always recommend, using [`onSizeChanged`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).onSizeChanged(kotlin.Function1)
+If you go to the developer docs, it will always recommend, using [`onSizeChanged`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).onSizeChanged(kotlin.Function1))
 and the [`onGloballyPositioned`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).onGloballyPositioned(kotlin.Function1)) `Modifier`s.
 
 - Using `onSizeChanged` is usually bad, because it can get invoked multiple times, or not at all, leading to recompositions
