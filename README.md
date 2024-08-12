@@ -1,4 +1,4 @@
-## MeasureComposable
+## MeasureComposable [WIP]
 
 Simple utilities to measure the content of a particular composable
 
