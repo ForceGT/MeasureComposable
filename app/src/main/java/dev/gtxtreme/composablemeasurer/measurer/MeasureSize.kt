@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.layout.SubcomposeLayout
 import androidx.compose.ui.unit.IntSize
 import dev.gtxtreme.composablemeasurer.utils.isSameAs
 import dev.gtxtreme.composablemeasurer.utils.updateSize
@@ -13,16 +14,19 @@ fun MeasureSize(
     composableSizeMeasurer: MutableState<ComposableSizeMeasurer>,
     content: @Composable () -> Unit,
 ) {
-    Layout(
-        content = { content() },
-    ) { measurables, constraints ->
-        // Measure the content
-        val placeables = measurables.map { it.measure(constraints) }
 
-        // Get the maximum width and height of the placeables
-        val width = placeables.maxOfOrNull { it.width } ?: 0
-        val height = placeables.maxOfOrNull { it.height } ?: 0
+    SubcomposeLayout { constraints ->
 
+        val measurables = subcompose("content", content)
+            .map {
+                it.measure(constraints)
+            }
+
+        // Get the maximum width and height of the measurables
+        val width = measurables.maxOfOrNull { it.width } ?: 0
+        val height = measurables.maxOfOrNull { it.height } ?: 0
+
+        // Update the composable size state
         val currentSize = IntSize(
             width = width,
             height = height,
@@ -45,9 +49,9 @@ fun MeasureSize(
             )
         }
 
-        // Set the layout with the size
+        // Set the layout size
         layout(width, height) {
-            placeables.forEach {
+            measurables.forEach {
                 it.placeRelative(0, 0)
             }
         }
