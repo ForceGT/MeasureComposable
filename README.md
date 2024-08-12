@@ -1,6 +1,9 @@
 ## MeasureComposable [WIP]
 
-Simple utilities to measure the content of a particular composable
+Simple utilities to measure the content of a particular composable!
+
+
+![](https://github.com/user-attachments/assets/61371762-f450-46c5-a790-e385d0f0cf57)
 
 
 ### Use Case
