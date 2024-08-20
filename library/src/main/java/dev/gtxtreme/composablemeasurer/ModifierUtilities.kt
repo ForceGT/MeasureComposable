@@ -1,4 +1,4 @@
-package dev.gtxtreme.composablemeasurer.measurer
+package dev.gtxtreme.composablemeasurer
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layout

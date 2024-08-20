@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposableMeasurer"
 include(":app")
+include(":library")

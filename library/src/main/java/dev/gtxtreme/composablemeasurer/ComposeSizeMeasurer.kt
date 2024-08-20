@@ -1,4 +1,4 @@
-package dev.gtxtreme.composablemeasurer.measurer
+package dev.gtxtreme.composablemeasurer
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
